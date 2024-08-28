@@ -1,0 +1,9 @@
+#!/bin/bash
+
+PUERTO=1
+ANCHO_PANTALLA=1152
+ALTO_PANTALLA=864
+RESOLUCION="${ANCHO_PANTALLA}x${ALTO_PANTALLA}"
+
+vncserver -kill :${PUERTO}
+vncserver -geometry $RESOLUCION -listen tcp :1 ; DISPLAY=:1 xhost +
